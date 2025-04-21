@@ -1,0 +1,20 @@
+-e .
+transformer_lens
+sae-lens
+einops
+plotly
+tqdm
+pydantic
+jaxtyping
+transformers
+datasets
+torch
+torchvision
+numpy
+scipy
+ipython
+matplotlib
+scikit-learn
+git+https://github.com/callummcdougall/CircuitsVis.git#subdirectory=python
+ipywidgets
+ipykernel
