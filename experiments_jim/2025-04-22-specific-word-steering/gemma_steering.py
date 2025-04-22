@@ -362,8 +362,11 @@ NEGATIVE_PROMPTS = ['A rhymed couplet:\nFootsteps echoing on the schoolyard bric
 
 # POSITIVE_PROMPTS = [f'A rhymed couplet:\n{line}\n' for line in lines_that_rhyme_with_quick]
 # NEGATIVE_PROMPTS = [f'A rhymed couplet:\n{line}\n' for line in lines_that_rhyme_with_pain]
-POSITIVE_PROMPTS = [f'A rhymed couplet:\n{line}\n' for line in lines_that_rhyme_with_rabbit]
-NEGATIVE_PROMPTS = [f'A rhymed couplet:\n{line}\n' for line in lines_that_rhyme_with_habit]
+def get_prompts(lines):
+    return [f'A rhymed couplet:\n{line}\n' for line in lines]
+
+POSITIVE_PROMPTS = get_prompts(lines_that_rhyme_with_rabbit)
+NEGATIVE_PROMPTS = get_prompts(lines_that_rhyme_with_habit)
 OUTPUT_FILE="gemma2_steering_rhyme.txt"
 
 # GENERATION_PROMPT='A rhymed couplet:\nHe saw a carrot and had to grab it\n'
@@ -387,6 +390,7 @@ GENERATION_PROMPT=GEMMA_PROMPT_TEMPLATE.format(instruction=instructions[0],line=
 # GENERATION_PROMPT='A rhymed couplet:\nHe stubbed his toe, a flashing pain\n'
 # GENERATION_PROMPT='A rhymed couplet:\nHe saw a carrot and had to grab it\n'
 GENERATION_PROMPT='A rhymed couplet:\nI know I should quit, but I just can\'t stab it\n' #'A rhymed couplet:\nI know I should quit, but I just can\'t stab it\n'
+
 # %%
 # ## 5. Compute the Steering Vector
 
@@ -418,76 +422,69 @@ if torch.cuda.is_available():
 # ## 6. Generate Text (Baseline vs. Steered)
 import einops
 STEERING_MULTIPLIER = 1.5
+MAX_NEW_TOKENS = 40
 
-def generate_steered_output(steering_vector, model, tokenizer, generation_prompt, batch_size,steering_multiplier, max_new_tokens, temperature, do_sample):
-    if steering_vector is None:
-        return None
+def generate_steered_output(steering_vector, model, tokenizer, generation_prompt, batch_size):
     inputs = tokenizer([generation_prompt] * batch_size, return_tensors="pt", padding=True).to(model.device)
-    # inputs.input_ids = einops.repeat(inputs.input_ids, "1 p-> b p", b=batch_size)
-    # tokens = model.to_tokens(generation_prompt)
-    # tokens = einops.repeat(tokens, "1 p-> b p", b=batch_size)
-    # print(tokens.shape)
-    print(inputs.input_ids.shape)
-    with torch.no_grad():
-        outputs_baseline = model.generate(
-            **inputs,
-            max_new_tokens=max_new_tokens,
-            temperature=temperature,
-            do_sample=do_sample,
-            pad_token_id=tokenizer.eos_token_id # Important for generation
-        )
-
-    # print(outputs_baseline.shape)
-    text_baseline = tokenizer.batch_decode(outputs_baseline, skip_special_tokens=True)
-    # text_baseline = [tokenizer.decode(outputs_baseline[i], skip_special_tokens=True) for i in range(batch_size)]
-
-    print(f"\n--- Generating Steered Output (Multiplier: {steering_multiplier}) ---")
-    with torch.no_grad():
-         # Apply the steering hook using the context manager
-        with apply_steering(model, TARGET_LAYER_NAME, steering_vector, steering_multiplier):
-            outputs_steered = model.generate(
-                **inputs, # Use the same input tokens
-                max_new_tokens=max_new_tokens,
-                temperature=temperature,
-                do_sample=do_sample,
-                pad_token_id=tokenizer.eos_token_id,
+    if steering_vector is None:
+        print(inputs.input_ids.shape)
+        with torch.no_grad():
+            outputs_baseline = model.generate(
+                **inputs,
+                max_new_tokens=MAX_NEW_TOKENS,
+                temperature=TEMPERATURE,
+                do_sample=DO_SAMPLE,
+                pad_token_id=tokenizer.eos_token_id # Important for generation
             )
-    text_steered = tokenizer.batch_decode(outputs_steered, skip_special_tokens=True)
 
-    print(f"\n--- Generating Steered Output (Multiplier: {-steering_multiplier}) ---")
-    with torch.no_grad():
-         # Apply the steering hook using the context manager
-        with apply_steering(model, TARGET_LAYER_NAME, steering_vector, -steering_multiplier):
-            outputs_steered = model.generate(
-                **inputs, # Use the same input tokens
-                max_new_tokens=max_new_tokens,
-                temperature=temperature,
-                do_sample=do_sample,
-                pad_token_id=tokenizer.eos_token_id
-            )
-    text_negsteered = tokenizer.batch_decode(outputs_steered, skip_special_tokens=True)
+        text = tokenizer.batch_decode(outputs_baseline, skip_special_tokens=True)
+    else:
+        with torch.no_grad():
+            # Apply the steering hook using the context manager
+            with apply_steering(model, TARGET_LAYER_NAME, steering_vector, STEERING_MULTIPLIER):
+                outputs_steered = model.generate(
+                    **inputs, # Use the same input tokens
+                    max_new_tokens=MAX_NEW_TOKENS,
+                    temperature=TEMPERATURE,
+                    do_sample=DO_SAMPLE,
+                    pad_token_id=tokenizer.eos_token_id,
+                )
+        text = tokenizer.batch_decode(outputs_steered, skip_special_tokens=True)
+    return text
 
-    # Clean up generation outputs
-    del outputs_baseline, outputs_steered, inputs
-    gc.collect()
-    if torch.cuda.is_available():
-        torch.cuda.empty_cache()
+def generate_outputs(steering_vector, model, tokenizer, generation_prompt, batch_size):
+    assert steering_vector is not None
+    text_baseline = generate_steered_output(None, model, tokenizer, generation_prompt, batch_size)
+    text_steered = generate_steered_output(steering_vector, model, tokenizer, generation_prompt, batch_size)
+    text_negsteered = generate_steered_output(-steering_vector, model, tokenizer, generation_prompt, batch_size)
     return text_baseline, text_steered, text_negsteered
 
-MAX_NEW_TOKENS = 30
-
-text_baseline, text_steered, text_negsteered = generate_steered_output(steering_vector, model, tokenizer, GENERATION_PROMPT, 1000, STEERING_MULTIPLIER, MAX_NEW_TOKENS, TEMPERATURE, DO_SAMPLE)
+text_baseline, text_steered, text_negsteered = generate_outputs(steering_vector, model, tokenizer, GENERATION_PROMPT, 10)
 print(text_baseline[1])
 print(text_steered[1])
 print(text_negsteered[1])
 # %%
 def get_last_word(text):
-    second_line = text.split("\n")[2]
+    lines = text.split("\n")
+    if len(lines) < 3:
+        print(f"Failed to get last word: {text}")
+        return ""
+    second_line = lines[2]
     second_line_words = second_line.split(" ")
+    if len(second_line_words) == 0:
+        print(f"Failed to get last word: {text}")
+        return ""
     last_word = second_line_words[-1]
     if last_word == "":
+        if len(second_line_words) == 1:
+            print(f"Failed to get last word: {text}")
+            return ""
         last_word = second_line_words[-2]
     return last_word
+
+def get_last_word_fraction(texts, word):
+    last_words = [get_last_word(line) for line in texts]
+    return len([w for w in last_words if word.lower() in w.lower()]) / len(last_words)
 
 last_words_baseline = [get_last_word(line) for line in text_baseline]
 last_words_steered = [get_last_word(line) for line in text_steered]
@@ -496,67 +493,41 @@ print(last_words_baseline)
 print(last_words_steered)
 print(last_words_negsteered)
 # print fraction of last words containing 'rabit' and 'habit'
-rabbit_fraction_baseline = len([word for word in last_words_baseline if 'rabbit' in word.lower()]) / len(last_words_baseline)
-rabbit_fraction_steered = len([word for word in last_words_steered if 'rabbit' in word.lower()]) / len(last_words_steered)
-rabbit_fraction_negsteered = len([word for word in last_words_negsteered if 'rabbit' in word.lower()]) / len(last_words_negsteered)
+rabbit_fraction_baseline = get_last_word_fraction(text_baseline, 'rabbit')
+rabbit_fraction_steered = get_last_word_fraction(text_steered, 'rabbit')
+rabbit_fraction_negsteered = get_last_word_fraction(text_negsteered, 'rabbit')
 print(f"Rabit fraction baseline: {rabbit_fraction_baseline}")
 print(f"Rabit fraction steered: {rabbit_fraction_steered}")
 print(f"Rabit fraction negsteered: {rabbit_fraction_negsteered}")
-habit_fraction_baseline = len([word for word in last_words_baseline if 'habit' in word.lower()]) / len(last_words_baseline)
-habit_fraction_steered = len([word for word in last_words_steered if 'habit' in word.lower()]) / len(last_words_steered)
-habit_fraction_negsteered = len([word for word in last_words_negsteered if 'habit' in word.lower()]) / len(last_words_negsteered)
+habit_fraction_baseline = get_last_word_fraction(text_baseline, 'habit')
+habit_fraction_steered = get_last_word_fraction(text_steered, 'habit')
+habit_fraction_negsteered = get_last_word_fraction(text_negsteered, 'habit')
 print(f"Habit fraction baseline: {habit_fraction_baseline}")
 print(f"Habit fraction steered: {habit_fraction_steered}")
 print(f"Habit fraction negsteered: {habit_fraction_negsteered}")
 # %%
-# ## 7. Save Results to File
+# ## 6.5 Evaluate Prompt suggestiveness
+import numpy as np
+def get_suggestiveness(lines, word1, word2, batch_size=100):
+    prompts = get_prompts(lines)
+    suggestiveness_scores = []
+    for prompt in prompts:
+        couplet = generate_steered_output(None, model, tokenizer, prompt, batch_size)
+        suggestiveness_word1 = get_last_word_fraction(couplet, word1)
+        suggestiveness_word2 = get_last_word_fraction(couplet, word2)
+        if suggestiveness_word1 == 0 and suggestiveness_word2 == 0:
+            continue
+        suggestiveness = suggestiveness_word1 - suggestiveness_word2
+        suggestiveness_scores.append(suggestiveness)
+        print(f"Prompt: {prompt}, Suggestiveness {word1}: {suggestiveness_word1}, Suggestiveness {word2}: {suggestiveness_word2}, Suggestiveness: {suggestiveness}")
+    suggestiveness_scores = np.array(suggestiveness_scores)
+    return suggestiveness_scores.mean()
 
-# +
-if steering_vector is not None:
-    try:
-        with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-            f.write("--- Configuration ---\n")
-            f.write(f"Model ID: {MODEL_ID}\n")
-            f.write(f"Quantized: {USE_4BIT_QUANTIZATION}\n")
-            f.write(f"Target Layer: {TARGET_LAYER_NAME}\n")
-            f.write(f"Steering Multiplier: {STEERING_MULTIPLIER}\n")
-            f.write(f"Max New Tokens: {MAX_NEW_TOKENS}\n")
-            f.write(f"Temperature: {TEMPERATURE}\n")
-            f.write(f"Do Sample: {DO_SAMPLE}\n")
-            f.write("\n--- Positive Prompts ---\n")
-            for p in POSITIVE_PROMPTS:
-                f.write(f"- {p}\n")
-            f.write("\n--- Negative Prompts ---\n")
-            for p in NEGATIVE_PROMPTS:
-                f.write(f"- {p}\n")
-            f.write("\n--- Generation Prompt ---\n")
-            f.write(f"{GENERATION_PROMPT}\n")
-            f.write("\n" + "="*30 + "\n")
-            f.write("--- Baseline Output ---\n")
-            f.write(text_baseline + "\n")
-            f.write("\n" + "="*30 + "\n")
-            f.write("--- Steered Output ---\n")
-            f.write(text_steered + "\n")
-            f.write("--- Neg Steered Output ---\n")
-            f.write(text_negsteered + "\n")
-        print(f"\nResults saved to {OUTPUT_FILE}")
-    except Exception as e:
-        print(f"\nError saving results to file: {e}")
-else:
-    print("\nResults not saved as generation was skipped.")
+suggestiveness_rabbit = get_suggestiveness(lines_that_rhyme_with_rabbit, 'rabbit', 'habit')
+suggestiveness_habit = get_suggestiveness(lines_that_rhyme_with_habit, 'habit', 'rabbit')
+print(f"Suggestiveness rabbit: {suggestiveness_rabbit}")
+print(f"Suggestiveness habit: {suggestiveness_habit}")
+# %%
+# ## 
 # %%
 
-GENERATION_PROMPT='A rhymed couplet:\nFootsteps echoing on the schoolyard bricks\n'
-inputs = tokenizer(GENERATION_PROMPT, return_tensors="pt").to(model.device)
-with torch.no_grad():
-    outputs_baseline = model.generate(
-        **inputs,
-        max_new_tokens=MAX_NEW_TOKENS,
-        temperature=TEMPERATURE,
-        do_sample=DO_SAMPLE,
-        pad_token_id=tokenizer.eos_token_id # Important for generation
-    )
-text_baseline = tokenizer.decode(outputs_baseline[0], skip_special_tokens=True)
-print(text_baseline)
-
-# %%
