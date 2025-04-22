@@ -187,31 +187,99 @@ lines_that_rhyme_with_habit = [
 ]
 
 lines_that_rhyme_with_rabbit = [
-    "She couldn't seem to break her gardening habit," # Until her veggies were stolen by a clever rabbit.
-    "He developed quite an interesting habit," # Of leaving carrots for the neighbor's pet rabbit.
-    "The monk maintained his meditation habit," # While outside his window hopped a curious rabbit.
-    "I tried to quit my late-night snacking habit," # When I spotted in my kitchen a midnight rabbit.
+    "She couldn't seem to break her gardening habit", # Until her veggies were stolen by a clever rabbit.
+    "He developed quite an interesting habit", # Of leaving carrots for the neighbor's pet rabbit.
+    "The monk maintained his meditation habit", # While outside his window hopped a curious rabbit.
+    "I tried to quit my late-night snacking habit", # When I spotted in my kitchen a midnight rabbit.
     "The farmer stuck to his early rising habit," # And caught sight of a dawn-grazing rabbit.
-    "My daughter formed an adorable habit," # Of reading bedtime stories to her stuffed rabbit.
-    "The writer maintained her daily writing habit," # Creating tales about a mischievous rabbit.
-    "The painter couldn't shake her artistic habit," # Her favorite subject was a snow-white rabbit.
-    "She picked up the peculiar habit," # Of leaving garden notes addressed to a rabbit.
-    "He kept up his wholesome forest walking habit," # Often spotting the same cotton-tailed rabbit.
-    "The boy acquired a strange collecting habit," # Of items shaped like his favorite animal: rabbit.
-    "The chef developed an experimental cooking habit," # Inspired by watching a munching wild rabbit.
+    "My daughter formed an adorable habit", # Of reading bedtime stories to her stuffed rabbit.
+    "The writer maintained her daily writing habit", # Creating tales about a mischievous rabbit.
+    "The painter couldn't shake her artistic habit", # Her favorite subject was a snow-white rabbit.
+    "She picked up the peculiar habit", # Of leaving garden notes addressed to a rabbit.
+    "He kept up his wholesome forest walking habit", # Often spotting the same cotton-tailed rabbit.
+    "The boy acquired a strange collecting habit", # Of items shaped like his favorite animal: rabbit.
+    "The chef developed an experimental cooking habit", # Inspired by watching a munching wild rabbit.
+    "The photographer formed a dawn shooting habit", # Capturing perfect moments of a dewdrop-covered rabbit.
+    "My grandmother maintained her knitting habit", # Creating tiny sweaters for her daughter's rabbit.
+    "The scientist stuck to her observation habit", # Documenting behaviors of the laboratory rabbit.
+    "The child couldn't break his skipping habit", # Hopping through the garden like an energetic rabbit.
+    "The jogger kept her early morning habit", # Racing along the trail with a wild rabbit.
+    "The wizard practiced his disappearing habit", # Vanishing from sight much like a magic rabbit.
+    "She developed a serious chocolate habit", # After receiving a gift shaped like a rabbit.
+    "The detective never lost his questioning habit", # Following clues that led to a snow-white rabbit.
+    "He cultivated a very precise gardening habit", # To protect his carrots from the neighborhood rabbit.
+    "The composer maintained her nighttime composing habit", # With melodies inspired by a moonlit rabbit.
+    "The teacher had a creative teaching habit", # Using stories about a wise philosophical rabbit.
+    "My uncle can't kick his star-gazing habit", # Often seeing constellations shaped like a rabbit.
+    "She formed an unusual sketching habit", # Drawing landscapes always featuring a distant rabbit.
+    "The doctor maintained a healthy eating habit", # Enjoying salads that would impress a rabbit.
+    "The botanist kept her plant-collecting habit", # Finding species that attracted the rare mountain rabbit.
+    "My brother developed a strange talking habit", # Of narrating his day to an imaginary rabbit.
+    "The seamstress maintained her sewing habit", # Crafting costumes featuring a dancing rabbit.
+    "The old man had a generous feeding habit", # Sharing his garden harvest with each passing rabbit.
+    "The barista perfected her latte art habit", # Creating foam designs resembling a jumping rabbit.
+    "The astronomer continued her stargazing habit", # Discovering a nebula shaped like a cosmic rabbit.
+    "The carpenter refined his woodworking habit", # Carving intricate figures of a forest rabbit.
+    "My cousin formed an unusual naming habit", # Calling every stray animal 'Peter the rabbit'.
+    "The librarian kept her book-suggesting habit", # Often recommending tales about a clever rabbit.
+    "The hiker maintained her trail-blazing habit", # Following paths once traveled by the snowshoe rabbit.
+    "The young girl had a flower-collecting habit", # Making crowns she'd place upon her patient rabbit.
+    "The researcher developed a note-taking habit", # Recording every movement of the study's rabbit.
+    "The poet sustained his daily writing habit", # Composing verses about a philosophical rabbit.
+    "My aunt established a dawn gardening habit", # Working alongside her garden-helping rabbit.
+    "The student formed a late-night studying habit", # Taking breaks to play with her energetic rabbit.
+    "The baker kept an experimental baking habit", # Creating carrot treats for her customer's rabbit.
+    "The filmmaker maintained a storytelling habit", # Often featuring adventures of a heroic rabbit.
+    "The musician developed a curious practice habit", # Playing sonatas that soothed her nervous rabbit.
+    "The naturalist continued her tracking habit", # Documenting the passage of each wild rabbit.
+    "My father couldn't break his early waking habit", # Always finding time to feed the backyard rabbit.
+    "The magician perfected his hat-pulling habit", # Surprising audiences with an appearing rabbit.
+    "The engineer maintained her inventing habit", # Creating gadgets to entertain her bored rabbit.
+    "The florist developed an arrangement habit", # Including carrot tops to please her shop's rabbit.
+    "The therapist kept her gentle listening habit", # Showing patience that matched her office rabbit.
 ]
 
-lines_that_rhyme_with_rabbit = [
-    "When I found a small, trembling rabbit," # Caring for animals became my habit.
-    "She darted through the garden like a rabbit," # Looking for treats had become her habit.
-    "He claimed he could pull a hat from a rabbit," # Showing off magic tricks was his daily habit.
-    "The children giggled as they chased the rabbit," # Running through meadows became their favorite habit.
-    "I planted carrots to attract a rabbit," # Gardening in spring is my cherished habit.
-    "My thoughts multiply faster than a rabbit," # Overthinking has become my worst habit.
-    "The speedy win went to the tortoise, not the rabbit," # Victory comes from persistence, not just habit.
-    "In the moonlight hopped a silver rabbit," # Stargazing at night is now my habit.
-    "They built a cozy hutch for their new rabbit," # Creating homes for pets is a wonderful habit.
-    "The chef prepared a savory stew with rabbit," # Cooking wild game had become his habit.
+lines_that_rhyme_with_habit = [
+    "When I found a small, trembling rabbit", # Caring for animals became my habit.
+    "She darted through the garden like a rabbit", # Looking for treats had become her habit.
+    "He claimed he could pull a hat from a rabbit", # Showing off magic tricks was his daily habit.
+    "The children giggled as they chased the rabbit", # Running through meadows became their favorite habit.
+    "I planted carrots to attract a rabbit", # Gardening in spring is my cherished habit.
+    "My thoughts multiply faster than a rabbit", # Overthinking has become my worst habit.
+    "The speedy win went to the tortoise, not the rabbit", # Victory comes from persistence, not just habit.
+    "In the moonlight hopped a silver rabbit", # Stargazing at night is now my habit.
+    "They built a cozy hutch for their new rabbit", # Creating homes for pets is a wonderful habit.
+    "The chef prepared a savory stew with rabbit", # Cooking wild game had become his habit.
+    "Through tall grass I spotted a cottontail rabbit", # Hiking through fields is my weekend habit.
+    "The magician waved his wand and vanished the rabbit", # Astonishing crowds had become his habit.
+    "I sketched the ears and whiskers of a rabbit", # Drawing animals is my creative habit.
+    "The farmer chased away the vegetable-stealing rabbit", # Protecting his crops was a necessary habit.
+    "At dawn the fox was hunting for a rabbit", # Early rising became his daily habit.
+    "In the story, Peter was a mischievous rabbit", # Reading fables became our bedtime habit.
+    "Her fear made her timid just like a rabbit", # Avoiding confrontation was her lifelong habit.
+    "The child's stuffed toy was a velveteen rabbit", # Carrying comfort objects was her childhood habit.
+    "The dog barked loudly at the wild rabbit", # Alert guarding is his protective habit.
+    "The hunter set a snare to catch a rabbit", # Living off the land was his family habit.
+    "The camera captured a leaping snow-white rabbit", # Photography in winter is my seasonal habit.
+    "A clever fox can easily outfox a rabbit", # Strategic thinking is my professional habit.
+    "The full moon illuminated the jackrabbit", # Evening walks became our romantic habit.
+    "Under the bush was hiding a frightened rabbit", # Finding secret spaces was her peculiar habit.
+    "Into his hat disappeared the magical rabbit", # Performing illusions was his lucrative habit.
+    "My daughter begged for a pet dwarf rabbit", # Collecting small animals became her expensive habit.
+    "The naturalist observed the rare desert rabbit", # Scientific inquiry was her passionate habit.
+    "Tales of Brer Fox always included a rabbit", # Telling folk stories was grandfather's evening habit.
+    "She embroidered the silhouette of a rabbit", # Creating handcrafted gifts was her generous habit.
+    "Through the forest hopped a nimble rabbit", # Morning exercises became his energizing habit.
+    "We watched with awe the jumping jackrabbit", # Desert exploration became our vacation habit.
+    "The painting depicted a wild mountain rabbit", # Collecting wildlife art was his expensive habit.
+    "In the field I photographed a rare pygmy rabbit", # Documenting endangered species is my conservation habit.
+    "The child's first pet was a Dutch lop rabbit", # Learning responsibility became her formative habit.
+    "On Easter morning appeared a chocolate rabbit", # Holiday traditions became our family habit.
+    "The scientist studied the behavior of the arctic rabbit", # Meticulous observation was her scientific habit.
+    "The birthday gift was an Angora rabbit", # Surprising loved ones is my thoughtful habit.
+    "Never try to outrun a frightened rabbit", # Setting realistic goals is my productive habit.
+    "Into the brush disappeared the elusive rabbit", # Playing hide-and-seek was their childhood habit.
+    "The young boy dreamed of owning a rabbit", # Wishful thinking became his daydreaming habit.
 ]
 
 
@@ -530,12 +598,14 @@ print(high_habit_suggestiveness_indices)"""
 # lines_that_rhyme_with_rabbit_suggestive = [lines_that_rhyme_with_rabbit[i] for i in high_rabbit_suggestiveness_indices]
 # lines_that_rhyme_with_habit_suggestive = [lines_that_rhyme_with_habit[i] for i in high_habit_suggestiveness_indices]
 # %%
-POSITIVE_PROMPTS = get_prompts(lines_that_rhyme_with_rabbit)
-NEGATIVE_PROMPTS = get_prompts(lines_that_rhyme_with_habit)
+# POSITIVE_PROMPTS = get_prompts(lines_that_rhyme_with_quick)
+# NEGATIVE_PROMPTS = get_prompts(lines_that_rhyme_with_pain)
 # POSITIVE_PROMPTS = get_prompts(lines_that_rhyme_with_rabbit_suggestive)
 # NEGATIVE_PROMPTS = get_prompts(lines_that_rhyme_with_habit_suggestive)
 # POSITIVE_PROMPTS = get_prompts(lines_that_rhyme_with_quick)
 # NEGATIVE_PROMPTS = get_prompts(lines_that_rhyme_with_pain)
+NEGATIVE_PROMPTS = get_prompts(lines_that_rhyme_with_rabbit)
+POSITIVE_PROMPTS = get_prompts(lines_that_rhyme_with_habit)
 # GENERATION_PROMPT=f'A rhymed couplet:\n{lines_that_rhyme_with_quick[0]}\n'
 # GENERATION_PROMPT='A rhymed couplet:\nA leopard appeared, fierce and quick\n'
 # GENERATION_PROMPT='A rhymed couplet:\nHe stubbed his toe, a flashing pain\n'
@@ -544,8 +614,10 @@ GENERATION_PROMPT='A rhymed couplet:\nHe saw a carrot and had to grab it\n'
 # %%
 # positive_words = [line.split(" ")[-1] for line in lines_that_rhyme_with_quick]
 # negative_words = [line.split(" ")[-1] for line in lines_that_rhyme_with_pain]
-positive_words = ["rabbit"]
-negative_words = ["habit"]
+# positive_words = ["rabbit"]
+# negative_words = ["habit"]
+negative_words = ["rabbit"]
+positive_words = ["habit"]
 # %%
 # ## 5. Compute the Steering Vector
 def get_steering_vector(model, tokenizer, positive_prompts, negative_prompts, layer=20):
@@ -596,83 +668,67 @@ def get_steering_vector_fast(model, tokenizer, positive_prompts, negative_prompt
         torch.cuda.empty_cache()
     return steering_vector
 
-# steering_vector = get_steering_vector(model, tokenizer, POSITIVE_PROMPTS, NEGATIVE_PROMPTS, layer=20)
-steering_vector = get_steering_vector_fast(model, tokenizer, POSITIVE_PROMPTS, NEGATIVE_PROMPTS, layer=20)
-print(steering_vector.shape)
-# Clean up memory
 # %%
-# ## 6. Generate Text (Baseline vs. Steered)
+# ## Create Graph showing the impact more examples in the negative prompts have
+from tqdm import tqdm
 STEERING_MULTIPLIER = 1.5
 LAYER = 20
 MAX_NEW_TOKENS = 40
 
-text_baseline, text_steered, text_negsteered = generate_outputs(steering_vector, model, tokenizer, GENERATION_PROMPT, 1000, layer=LAYER, steering_multiplier=STEERING_MULTIPLIER)
-print("Baseline:")
-print(text_baseline[1])
-print("Steered:")
-print(text_steered[1])
-print("Negatively steered:")
-print(text_negsteered[1])
-# %%
-# ## 6.5: Compute Rabbit and Habit likelyhoods
-last_words_baseline = [get_last_word(line) for line in text_baseline]
-last_words_steered = [get_last_word(line) for line in text_steered]
-last_words_negsteered = [get_last_word(line) for line in text_negsteered]
-print(last_words_baseline)
-print(last_words_steered)
-print(last_words_negsteered)
-# print fraction of last words containing 'rabit' and 'habit'
-positive_words_fraction_baseline = get_last_word_fraction(text_baseline, positive_words)
-positive_words_fraction_steered = get_last_word_fraction(text_steered, positive_words)
-positive_words_fraction_negsteered = get_last_word_fraction(text_negsteered, positive_words)
-print(f"Positive words fraction baseline: {positive_words_fraction_baseline}")
-print(f"Positive words fraction steered: {positive_words_fraction_steered}")
-print(f"Positive words fraction negsteered: {positive_words_fraction_negsteered}")
-negative_words_fraction_baseline = get_last_word_fraction(text_baseline, negative_words)
-negative_words_fraction_steered = get_last_word_fraction(text_steered, negative_words)
-negative_words_fraction_negsteered = get_last_word_fraction(text_negsteered, negative_words)
-print(f"Negative words fraction baseline: {negative_words_fraction_baseline}")
-print(f"Negative words fraction steered: {negative_words_fraction_steered}")
-print(f"Negative words fraction negsteered: {negative_words_fraction_negsteered}")
-# %%
-suggestiveness_scores_rabbit = get_suggestiveness(lines_that_rhyme_with_rabbit_suggestive, 'rabbit', 'habit', batch_size=500)
-suggestiveness_scores_habit = get_suggestiveness(lines_that_rhyme_with_habit_suggestive, 'habit', 'rabbit', batch_size=500)
-print(f"Suggestiveness rabbit: {suggestiveness_scores_rabbit.mean()}")
-print(f"Suggestiveness habit: {suggestiveness_scores_habit.mean()}")
-# %%
+frequency_positive_words_steered = []
+frequency_positive_words_negsteered = []
+frequency_negative_words_steered = []
+frequency_negative_words_negsteered = []
 
-# ## 7. Try out different Layers and Magnitudes for steering
-layers = np.linspace(15, 25, 11).astype(int)
-magnitudes = np.linspace(0.5, 2.0, 4)
-rabbit_vs_habit_likelyhood = np.zeros((len(layers), len(magnitudes)))
-for i, layer in enumerate(layers):
-    steering_vector = get_steering_vector(model, tokenizer, POSITIVE_PROMPTS, NEGATIVE_PROMPTS, layer)
-    for j, magnitude in enumerate(magnitudes):
-        text_steered = generate_steered_output(steering_vector, model, tokenizer, GENERATION_PROMPT, 1000, layer, magnitude)
-        rabbit_vs_habit_likelyhood[i, j] = get_last_word_fraction(text_steered, positive_words) - get_last_word_fraction(text_steered, negative_words)
+for i in tqdm(range(4, min(len(NEGATIVE_PROMPTS), len(POSITIVE_PROMPTS)), 5)):
+    negative_prompts = NEGATIVE_PROMPTS[:i]
+    positive_prompts = POSITIVE_PROMPTS[:i]
+    steering_vector = get_steering_vector_fast(model, tokenizer, negative_prompts, positive_prompts, layer=LAYER)
+    steered_text = generate_steered_output(steering_vector, model, tokenizer, GENERATION_PROMPT, 500, layer=LAYER, steering_multiplier=STEERING_MULTIPLIER)
+    negsteered_text = generate_steered_output(-steering_vector, model, tokenizer, GENERATION_PROMPT, 500, layer=LAYER, steering_multiplier=STEERING_MULTIPLIER)
+    frequency_positive_words_steered.append(get_last_word_fraction(steered_text, positive_words))
+    frequency_positive_words_negsteered.append(get_last_word_fraction(negsteered_text, positive_words))
+    frequency_negative_words_steered.append(get_last_word_fraction(steered_text, negative_words))
+    frequency_negative_words_negsteered.append(get_last_word_fraction(negsteered_text, negative_words))
 # %%
-# plot heatmap with plotly
-import plotly.express as px
-fig = px.imshow(rabbit_vs_habit_likelyhood, x=magnitudes, y=layers, color_continuous_scale='Viridis')
-fig.show()
-# %%
-# Plot matplotlib heatmap (y axis should go from 15 (down) to 25 (up))
+# Create visualization with 4 subplots
 import matplotlib.pyplot as plt
-plt.figure(figsize=(8, 10))
-plt.imshow(rabbit_vs_habit_likelyhood, cmap='viridis', origin='lower', extent=[0.5, 2.0, 15, 25], aspect='auto')
-# plt.colorbar(im, shrink=0.8, pad=0.02)
-# Set specific x-axis ticks
-x_ticks = [0.5, 1.0, 1.5, 2.0]
-plt.xticks(x_ticks)
+import numpy as np
 
-# You can also set specific y-axis ticks if needed
-y_ticks = np.arange(15, 26, 5)  # [15, 20, 25]
-plt.yticks(y_ticks)
+# Create figure and subplots
+fig, axs = plt.subplots(2, 2, figsize=(14, 10))
+fig.suptitle(f'Impact of Increasing Examples on Steering (Layer {LAYER}, Multiplier {STEERING_MULTIPLIER})')
 
-plt.colorbar()
-plt.title('Rabbit vs Habit Likelihood')
-plt.xlabel('Magnitude')
-plt.ylabel('Layer')
-# plt.tight_layout()
+# X-axis values (number of examples used)
+x_values = list(range(4, min(len(NEGATIVE_PROMPTS), len(POSITIVE_PROMPTS)), 5))
+
+# Plot data in each subplot
+axs[0, 0].plot(x_values, frequency_positive_words_steered, 'b-', marker='o')
+axs[0, 0].set_title('Positive Words in Steered Output')
+axs[0, 0].set_xlabel('Number of Examples')
+axs[0, 0].set_ylabel('Frequency')
+axs[0, 0].grid(True)
+
+axs[0, 1].plot(x_values, frequency_positive_words_negsteered, 'r-', marker='o')
+axs[0, 1].set_title('Positive Words in Negatively Steered Output')
+axs[0, 1].set_xlabel('Number of Examples')
+axs[0, 1].set_ylabel('Frequency')
+axs[0, 1].grid(True)
+
+axs[1, 0].plot(x_values, frequency_negative_words_steered, 'g-', marker='o')
+axs[1, 0].set_title('Negative Words in Steered Output')
+axs[1, 0].set_xlabel('Number of Examples')
+axs[1, 0].set_ylabel('Frequency')
+axs[1, 0].grid(True)
+
+axs[1, 1].plot(x_values, frequency_negative_words_negsteered, 'm-', marker='o')
+axs[1, 1].set_title('Negative Words in Negatively Steered Output')
+axs[1, 1].set_xlabel('Number of Examples')
+axs[1, 1].set_ylabel('Frequency')
+axs[1, 1].grid(True)
+
+# Adjust layout and save figure
+plt.tight_layout(rect=[0, 0, 1, 0.95])
+plt.savefig(f'steering_impact_layer{LAYER}_mult{STEERING_MULTIPLIER}.png', dpi=300)
 plt.show()
 # %%
