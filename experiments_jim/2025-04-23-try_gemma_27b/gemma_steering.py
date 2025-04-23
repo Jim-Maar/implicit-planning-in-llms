@@ -30,7 +30,7 @@ try:
 except Exception as e:
      print(f"Hugging Face login failed. Error: {e}")
 # %%
-MODEL_ID = "google/gemma-2-27b-it" # Or "google/gemma-2-9b" if you prefer the base model
+MODEL_ID = "google/gemma-2-9b-it" # Or "google/gemma-2-9b" if you prefer the base model
 # Set to True if you have limited VRAM (e.g., < 24GB). Requires bitsandbytes
 USE_4BIT_QUANTIZATION = False
 
@@ -654,7 +654,7 @@ MAX_NEW_TOKENS = 30
 
 def get_results(model, tokenizer, positive_prompts, negative_prompts, generation_prompt, positive_words, negative_words, layer=27, steering_multiplier=1.5, max_new_tokens=30):
     steering_vector = get_steering_vector_fast(model, tokenizer, positive_prompts, negative_prompts, layer)
-    text_unsteered, text_steered, text_negsteered = generate_outputs(steering_vector, model, tokenizer, generation_prompt, 1000, layer, steering_multiplier, max_new_tokens)
+    text_unsteered, text_steered, text_negsteered = generate_outputs(steering_vector, model, tokenizer, generation_prompt, 200, layer, steering_multiplier)
     print("Unsteered:")
     print(text_unsteered[:10])
     print("Steered:")
@@ -673,9 +673,27 @@ def get_results(model, tokenizer, positive_prompts, negative_prompts, generation
     print(f"Negative words fraction baseline: {negative_words_fraction_baseline}")
     print(f"Negative words fraction steered: {negative_words_fraction_steered}")
     print(f"Negative words fraction negsteered: {negative_words_fraction_negsteered}")
-    return positive_words_fraction_baseline, positive_words_fraction_steered, positive_words_fraction_negsteered, negative_words_fraction_baseline, negative_words_fraction_steered, negative_words_fraction_negsteered
+    results = {
+        "text_unsteered": text_unsteered,
+        "text_steered": text_steered,
+        "text_negsteered": text_negsteered,
+        "positive_words_fraction_baseline": positive_words_fraction_baseline,
+        "positive_words_fraction_steered": positive_words_fraction_steered,
+        "positive_words_fraction_negsteered": positive_words_fraction_negsteered,
+        "negative_words_fraction_baseline": negative_words_fraction_baseline,
+        "negative_words_fraction_steered": negative_words_fraction_steered,
+        "negative_words_fraction_negsteered": negative_words_fraction_negsteered
+    }
+    return results
 
-positive_words_fraction_baseline, positive_words_fraction_steered, positive_words_fraction_negsteered, negative_words_fraction_baseline, negative_words_fraction_steered, negative_words_fraction_negsteered = get_results(model, tokenizer, POSITIVE_PROMPTS, NEGATIVE_PROMPTS, GENERATION_PROMPT, positive_words, negative_words, layer=LAYER, steering_multiplier=STEERING_MULTIPLIER, max_new_tokens=MAX_NEW_TOKENS)
+results = get_results(model, tokenizer, POSITIVE_PROMPTS, NEGATIVE_PROMPTS, GENERATION_PROMPT, positive_words, negative_words, layer=LAYER, steering_multiplier=STEERING_MULTIPLIER, max_new_tokens=MAX_NEW_TOKENS)
+text_unsteered = results["text_unsteered"]
+text_steered = results["text_steered"]
+text_negsteered = results["text_negsteered"]
+positive_words_fraction_baseline = results["positive_words_fraction_baseline"]
+positive_words_fraction_steered = results["positive_words_fraction_steered"]
+positive_words_fraction_negsteered = results["positive_words_fraction_negsteered"]
+negative_words_fraction_baseline = results["negative_words_fraction_baseline"]
 
 # %%
 """MAX_NEW_TOKENS = 30
