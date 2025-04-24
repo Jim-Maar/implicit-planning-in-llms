@@ -187,31 +187,31 @@ lines_that_rhyme_with_habit = [
 ]
 
 lines_that_rhyme_with_rabbit = [
-    "She couldn't seem to break her gardening habit," # Until her veggies were stolen by a clever rabbit.
-    "He developed quite an interesting habit," # Of leaving carrots for the neighbor's pet rabbit.
-    "The monk maintained his meditation habit," # While outside his window hopped a curious rabbit.
-    "I tried to quit my late-night snacking habit," # When I spotted in my kitchen a midnight rabbit.
+    "She couldn't seem to break her gardening habit", # Until her veggies were stolen by a clever rabbit.
+    "He developed quite an interesting habit", # Of leaving carrots for the neighbor's pet rabbit.
+    "The monk maintained his meditation habit", # While outside his window hopped a curious rabbit.
+    "I tried to quit my late-night snacking habit", # When I spotted in my kitchen a midnight rabbit.
     "The farmer stuck to his early rising habit," # And caught sight of a dawn-grazing rabbit.
-    "My daughter formed an adorable habit," # Of reading bedtime stories to her stuffed rabbit.
-    "The writer maintained her daily writing habit," # Creating tales about a mischievous rabbit.
-    "The painter couldn't shake her artistic habit," # Her favorite subject was a snow-white rabbit.
-    "She picked up the peculiar habit," # Of leaving garden notes addressed to a rabbit.
-    "He kept up his wholesome forest walking habit," # Often spotting the same cotton-tailed rabbit.
-    "The boy acquired a strange collecting habit," # Of items shaped like his favorite animal: rabbit.
-    "The chef developed an experimental cooking habit," # Inspired by watching a munching wild rabbit.
+    "My daughter formed an adorable habit", # Of reading bedtime stories to her stuffed rabbit.
+    "The writer maintained her daily writing habit", # Creating tales about a mischievous rabbit.
+    "The painter couldn't shake her artistic habit", # Her favorite subject was a snow-white rabbit.
+    "She picked up the peculiar habit", # Of leaving garden notes addressed to a rabbit.
+    "He kept up his wholesome forest walking habit", # Often spotting the same cotton-tailed rabbit.
+    "The boy acquired a strange collecting habit", # Of items shaped like his favorite animal: rabbit.
+    "The chef developed an experimental cooking habit", # Inspired by watching a munching wild rabbit.
 ]
 
 lines_that_rhyme_with_rabbit = [
-    "When I found a small, trembling rabbit," # Caring for animals became my habit.
-    "She darted through the garden like a rabbit," # Looking for treats had become her habit.
-    "He claimed he could pull a hat from a rabbit," # Showing off magic tricks was his daily habit.
-    "The children giggled as they chased the rabbit," # Running through meadows became their favorite habit.
-    "I planted carrots to attract a rabbit," # Gardening in spring is my cherished habit.
-    "My thoughts multiply faster than a rabbit," # Overthinking has become my worst habit.
-    "The speedy win went to the tortoise, not the rabbit," # Victory comes from persistence, not just habit.
-    "In the moonlight hopped a silver rabbit," # Stargazing at night is now my habit.
-    "They built a cozy hutch for their new rabbit," # Creating homes for pets is a wonderful habit.
-    "The chef prepared a savory stew with rabbit," # Cooking wild game had become his habit.
+    "When I found a small, trembling rabbit", # Caring for animals became my habit.
+    "She darted through the garden like a rabbit", # Looking for treats had become her habit.
+    "He claimed he could pull a hat from a rabbit", # Showing off magic tricks was his daily habit.
+    "The children giggled as they chased the rabbit", # Running through meadows became their favorite habit.
+    "I planted carrots to attract a rabbit", # Gardening in spring is my cherished habit.
+    "My thoughts multiply faster than a rabbit", # Overthinking has become my worst habit.
+    "The speedy win went to the tortoise, not the rabbit", # Victory comes from persistence, not just habit.
+    "In the moonlight hopped a silver rabbit", # Stargazing at night is now my habit.
+    "They built a cozy hutch for their new rabbit", # Creating homes for pets is a wonderful habit.
+    "The chef prepared a savory stew with rabbit", # Cooking wild game had become his habit.
 ]
 
 
@@ -596,8 +596,8 @@ def get_steering_vector_fast(model, tokenizer, positive_prompts, negative_prompt
         torch.cuda.empty_cache()
     return steering_vector
 
-# steering_vector = get_steering_vector(model, tokenizer, POSITIVE_PROMPTS, NEGATIVE_PROMPTS, layer=20)
 steering_vector = get_steering_vector_fast(model, tokenizer, POSITIVE_PROMPTS, NEGATIVE_PROMPTS, layer=20)
+# steering_vector = get_steering_vector_fast(model, tokenizer, POSITIVE_PROMPTS, NEGATIVE_PROMPTS, layer=20)
 print(steering_vector.shape)
 # Clean up memory
 # %%
