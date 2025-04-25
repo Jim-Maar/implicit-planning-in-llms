@@ -45,6 +45,26 @@ An hourglass
 
 """
 
+generation_prompt_rhymed = """Please generate 100 rhymed two-line couplets using all sorts of different rhymes and topics. just continue the list below in the same format.
+
+The morning sun cast shadows long and bright
+The valley glowed with warm, inviting light
+
+The album holds what memory cannot keep
+The past preserved in images so deep
+
+"""
+
+generation_prompt_unrhymed = """Please generate 100 unrhymed two-line couplets using all sorts of different topics. just continue the list below in the same format.
+
+Among the towering oaks and whispered winds
+Generations carved their legacy into earth
+
+Memories suspended in digital eternity
+Silent witness to joy and passing time
+
+"""
+
 dataset_cfgs = {
     "a_rabbit": {
         "file_path": "a_rabbit.json",
@@ -61,9 +81,16 @@ dataset_cfgs = {
     "a_an_something": {
         "file_path": "a_an_something.json",
         "generation_prompt": generation_prompt_a_an_something
+    },
+    "rhymed": {
+        "file_path": "rhymed.json",
+        "generation_prompt": generation_prompt_rhymed
+    },
+    "unrhymed": {
+        "file_path": "unrhymed.json",
+        "generation_prompt": generation_prompt_unrhymed
     }
 }
-
 datasets = {}
 
 # Get the directory where this script is located
