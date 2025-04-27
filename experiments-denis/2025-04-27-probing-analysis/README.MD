@@ -1,0 +1,3 @@
+- script train_and_interpret_rhyme_probe.ipynb trains a probe for one layer at a time.
+- Data splits files contain training and validation data for rhyme type classification. The data was re-split for training a classifier at each layer.
+- rhyme_probe_weights files contain trained probe weights for each rhyme type
