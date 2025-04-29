@@ -977,3 +977,19 @@ a_date_or_a_pear_questions = [
     "What fruit can be eaten out of hand as a healthy snack?\n",
     "What fruit is sometimes used in breakfast pastries?\n",
 ]
+
+len_rollout_rhymed = len(rhymed_couplets)
+len_rollout_unrhymed = len(unrhymed_couplets)
+
+rhymed_couplets_new = rhymed_couplets[:len_rollout_rhymed//2]
+rhymed_couplets_new = [f"A rhymed couplet:\n{line}\n" for line in rhymed_couplets_new]
+unrhymed_couplets_new = unrhymed_couplets[:len_rollout_unrhymed//2]
+unrhymed_couplets_new = [f"An unrhymed couplet:\n{line}\n" for line in unrhymed_couplets_new]
+
+rhymed_couplets_single_line = [line.split("\n")[0] for line in rhymed_couplets[len_rollout_rhymed//2:]]
+rhymed_couplets_single_line = [f"A rhymed couplet:\n{line}\n" for line in rhymed_couplets_single_line]  
+unrhymed_couplets_single_line = [line.split("\n")[0] for line in unrhymed_couplets[len_rollout_unrhymed//2:]]
+unrhymed_couplets_single_line = [f"An unrhymed couplet:\n{line}\n" for line in unrhymed_couplets_single_line]
+
+rhymed_couplets_one_shoot = [rhymed_couplets_new[i] + "\n" + rhymed_couplets_single_line[i] for i in range(len(rhymed_couplets_new))]
+unrhymed_couplets_one_shoot = [unrhymed_couplets_new[i] + "\n" + unrhymed_couplets_single_line[i] for i in range(len(unrhymed_couplets_new))]
