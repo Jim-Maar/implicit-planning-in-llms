@@ -993,3 +993,34 @@ unrhymed_couplets_single_line = [f"An unrhymed couplet:\n{line}\n" for line in u
 
 rhymed_couplets_one_shoot = [rhymed_couplets_new[i] + "\n" + rhymed_couplets_single_line[i] for i in range(len(rhymed_couplets_new))]
 unrhymed_couplets_one_shoot = [unrhymed_couplets_new[i] + "\n" + unrhymed_couplets_single_line[i] for i in range(len(unrhymed_couplets_new))]
+
+couplets_ending_in_night_or_light = [
+    "The warrior stood prepared to fight,\nDrawing strength from the approaching",
+    "The forest path seemed to shrink quite tight,\nAs we ventured deeper into the"
+]
+
+couplets_ending_in_light = [
+    "The sun's rays broke through clouds so white\nBathing the meadow in golden light\n",
+    "The lighthouse beacon shone so bright\nGuiding lost ships with its warning light\n",
+    "The fireflies danced with twinkling might\nAdding magic to the summer light\n",
+    "The photographer captured the perfect sight\nPreserving the sunset's glorious light\n",
+    "The prism scattered colors quite right\nBreaking the spectrum into rainbow light\n",
+    "The candle's flame stood upright\nCasting shadows with its gentle light\n",
+    "The diamond sparkled with pure delight\nReflecting every fragment of light\n",
+    "The morning dew made flowers bright\nGlistening in the early morning light\n",
+    "The painter mixed colors with artistic sight\nCapturing the essence of northern light\n",
+    "The moth was drawn to the lantern's height\nMesmerized by the glowing light\n",
+]
+
+couplets_ending_in_night = [
+    "The owl hooted with all its might\nAnnouncing the arrival of night\n",
+    "The stars appeared one by one so bright\nDecorating the velvet canvas of night\n",
+    "The moon rose full at its height\nIlluminating the mysterious night\n",
+    "The wolves began their haunting rite\nHowling throughout the endless night\n",
+    "The bats emerged for silent flight\nHunting prey in the darkest night\n",
+    "The crickets chirped with pure delight\nAdding rhythm to the summer night\n",
+    "The ghosts were said to cause such fright\nWandering through the midnight night\n",
+    "The lovers whispered words quite right\nSharing secrets in the private night\n",
+    "The campfire stories caused such fright\nPerfect tales for a wilderness night\n",
+    "The city lights twinkled so bright\nChallenging the darkness of night\n",
+]
